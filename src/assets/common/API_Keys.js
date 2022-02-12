@@ -1,4 +1,4 @@
-const apiKey = "2273bc23deeeb4368ac61f39bf67c7ad";
+const apiKey = "{process.env.API_KEY}";
 
 export const uri = {
   netflixOriginal: `/discover/tv?api_key=${apiKey}&with_networks=213`,
@@ -20,4 +20,4 @@ export const uri = {
   documentry: `/discover/movie?api_key=${apiKey}&with_genres=99`,
 };
 
-// https://api.themoviedb.org/3/discover/movie?api_key=2273bc23deeeb4368ac61f39bf67c7ad&with_genres=28
+
