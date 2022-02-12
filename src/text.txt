@@ -1,0 +1,131 @@
+api_key: 2273bc23deeeb4368ac61f39bf67c7ad
+api_link: https://api.themoviedb.org/3/movie/550?api_key=2273bc23deeeb4368ac61f39bf67c7ad
+api_accessToken: eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMjczYmMyM2RlZWViNDM2OGFjNjFmMzliZjY3YzdhZCIsInN1YiI6IjYxZjJkNmRlZGYyOTQ1MTViODNlOWNiYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.cdOSxmAP7MCsXjV_WfrSg5nYJsZ4T7A4m6jPnznNBVE
+baseURL: https://api.themoviedb.org/3
+
+https://api.themoviedb.org/3/discover/movie?api_key=2273bc23deeeb4368ac61f39bf67c7ad&with_genres=28
+
+// all movie
+Trending = `/trending/all/weeek?api_key=${API_KEY}&language=en-US`
+NetflixOriginal = `/discover/tv?api_key=${API_KEY}&with_networks=213`
+TopRated = `/movie/top_rated?api_key=${API_KEY}&language=en-US`
+-----------------
+Adeventure = `${baseURL}/discover/movie?api_key=${API_KEY}&with_genres=12`
+Fantasy = `${baseURL}/discover/movie?api_key=${API_KEY}&with_genres=14`
+Animation = `${baseURL}/discover/movie?api_key=${API_KEY}&with_genres=16`
+Drama = `${baseURL}/discover/movie?api_key=${API_KEY}&with_genres=18`
+Action = `${baseURL}/discover/movie?api_key=${API_KEY}&with_genres=28`
+Comedy = `${baseURL}/discover/movie?api_key=${API_KEY}&with_genres=35`
+History = `${baseURL}/discover/movie?api_key=${API_KEY}&with_genres=36`
+Horror = `${baseURL}/discover/movie?api_key=${API_KEY}&with_genres=27`
+Thriller = `${baseURL}/discover/movie?api_key=${API_KEY}&with_genres=53`
+ScienceFiction = `${baseURL}/discover/movie?api_key=${API_KEY}&with_genres=878`
+Family = `${baseURL}/discover/movie?api_key=${API_KEY}&with_genres=10751`
+Romance = `${baseURL}/discover/movie?api_key=${API_KEY}&with_genres=10749`
+Documentry = `${baseURL}/discover/movie?api_key=${API_KEY}&with_genres=99`
+
+
+
+///////////////////////////
+
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query';
+const api = createApi({
+    reducerPath: 'pokemonApi',
+    baseQuery: fetchBaseQuery({
+        baseUrl: 'https://example.org/',
+        prepareHeaders: (headers, {getState}) => {
+            const token = getState().auth.token;
+            if (token) {
+                headers.set('Authorization', `Bearer ${token}`)
+            }
+            return headers;
+        }
+    }),
+   keepUnusedDataFor: 30,
+   tagTypes:['Pokemons']
+   endpoints: build => ({         
+       getPokemons: build.query({             
+             query: () => (`/getpokemons`),
+             transformResponse: (response) => response.data,
+             providesTags: ['Pokemons'],
+       }),
+       createUser: build.mutation({
+             query: (request) => ({
+                 url: '/createpokemon',
+                 method: 'POST',
+                 body: request,
+             }),
+             invalidatesTags: ['Pokemons'],
+       }),
+    }), 
+});
+export const {useGetPokemonsQuery, useCreatePokemonMutation} = api;
+export default api;
+=============
+ //------------>
+    adventureMovies: builder.query({
+      query: () => ({
+        url: `${url.adeventure}`,
+        method: "GET",
+      }),
+    }),
+    //------------>
+    fantasyMovies: builder.query({
+      query: () => ({
+        url: `${url.fantasy}`,
+        method: "GET",
+      }),
+    }),
+    //------------>
+    animationMovies: builder.query({
+      query: () => {
+        return {
+          url: `${url.animation}`,
+          method: "GET",
+        };
+      },
+    }),
+    //------------>
+    dramaMovies: builder.query({
+      query: () => {
+        return {
+          url: `${url.drama}`,
+          method: "GET",
+        };
+      },
+    }),
+    //------------>
+    actionMovies: builder.query({
+      query: () => {
+        return {
+          url: `${url.action}`,
+          method: "GET",
+        };
+      },
+    }),
+    //------------>
+    comedyMovies: builder.query({
+      query: () => {
+        return {
+          url: `${url.comedy}`,
+          method: "GET",
+        };
+      },
+    }),
+    //------------>
+    historyMovies: builder.query({
+      query: () => {
+        return {
+          url: `${url.history}`,
+          method: "GET",
+        };
+      },
+    }),
+    =====================
+      useAdventureMoviesQuery,
+  useFantasyMoviesQuery,
+  useAnimationMoviesQuery,
+  useDramaMoviesQuery,
+  useActionMoviesQuery,
+  useComedyMoviesQuery,
+  useHistoryMoviesQuery,
