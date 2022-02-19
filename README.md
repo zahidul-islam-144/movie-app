@@ -6,4 +6,4 @@
 3. React Redux-Toolkit
 4. SAAS
 
-#Note: Landing page and responsiveness are done. Backend and authentication are under constructing. 
+# Note: Landing page and responsiveness are done. Backend and authentication are under constructing. 
