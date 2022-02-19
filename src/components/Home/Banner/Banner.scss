@@ -2,6 +2,7 @@
   height: 100%;
   width: 100%;
   position: relative;
+  
   .banner-img {
     height: 100%;
     width: 100%;
@@ -15,23 +16,25 @@
     top: 0;
     margin-top: 15%;
     margin-left: 35px;
-    // background-color: yellowgreen;
+
     h1 {
-      font-size: 5.5vw;
+      max-width: 50%;
+      font-size: 4.5vw;
       font-weight: 500;
       color: white;
     }
+
     .buttons {
       margin-top: 2%;
+
       span {
         color: white;
         font-weight: 500;
         margin-right: 1rem;
-        // background-color: #42e222;
-        background-color: #27191e5d;
-        border-radius: 0.4vw;
-        line-height: 10px;
+        background-color: #27191e56;
+        border-radius: 0.3vw;
         padding: 0.8% 2.5%;
+
         &:hover {
           color: black;
           background-color: #e4e8f5;
@@ -41,11 +44,9 @@
     }
     .description{
       width: 50%;
-      // max-width: 450px;
       height: auto;
       padding: 5px;
-   
-      // background-color: yellowgreen;
+
       p{
         color: white;
         margin-top: 5%;

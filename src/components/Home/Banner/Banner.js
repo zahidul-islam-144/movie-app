@@ -59,7 +59,7 @@ const description = `${data?.results[index]?.overview}`;
           </div>
 
           <div className="description">
-            <p>{truncate(`${description}`,150)}</p>
+            <p>{truncate(`${description}`,110)}</p>
           </div>
         </div>
       </div>
