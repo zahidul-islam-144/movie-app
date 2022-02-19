@@ -1,4 +1,50 @@
-.banner-container{
-  background-color: #202124;
+.banner-container {
   height: 100%;
+  width: 100%;
+  position: relative;
+  .banner-img {
+    height: 100%;
+    width: 100%;
+    background-position: top center;
+    background-attachment: fixed;
+    background-size: cover;
+    object-fit: contain;
+  }
+  .banner-content {
+    position: absolute;
+    top: 0;
+    margin-top: 15%;
+    margin-left: 45px;
+    // background-color: yellowgreen;
+    h1 {
+      font-size: 6vw;
+      font-weight: 500;
+      color: white;
+    }
+    .buttons {
+      margin-top: 8%;
+      span {
+        color: white;
+        font-weight: 500;
+        margin-right: 10px;
+        padding: 12px 40px;
+        background-color: #27191e5d;
+        filter: blur(1);
+        border-radius: 3px;
+       line-height: 10px;
+        &:hover {
+          color: black;
+          background-color: #e4e8f5;
+          font-weight: 500;
+        }
+      }
+    }
+    .description{
+      p{
+        color: white;
+        margin-top: 5%;
+        font-size: 1.5vw;
+      }
+    }
+  }
 }

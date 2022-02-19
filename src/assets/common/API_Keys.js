@@ -1,5 +1,5 @@
-const apiKey = "{process.env.API_KEY}";
-
+const apiKey = "2273bc23deeeb4368ac61f39bf67c7ad";
+console.log(apiKey);
 export const uri = {
   netflixOriginal: `/discover/tv?api_key=${apiKey}&with_networks=213`,
   topRated: `/movie/top_rated?api_key=${apiKey}&language=en-US`,

@@ -9,10 +9,10 @@ const MovieRow = (props) => {
   const { title, fetchURI } = props;
   const { data, isLoading } = useGetMoviesQuery(fetchURI);
   const [isMoved, setIsMoved] = useState(false);
-  const [slideNumber, setSlideNumber] = useState(0);
+  const [indexNumber, setIndexNumber] = useState(0);
 
-  const listRef = useRef();
-  console.log("data:", data);
+  const movieRef = useRef();
+  // console.log("data:", data);
 
   if (isLoading) {
     return (
@@ -21,18 +21,24 @@ const MovieRow = (props) => {
       </div>
     );
   }
+  // slider
   const handleClick = (direction) => {
-    // setIsMoved(true);
-    // let distance = listRef.current.getBoundingClientRect().x ;
-    // console.log(distance);
-    // if (direction === "left" && slideNumber > 0) {
-    //   setSlideNumber(slideNumber - 1);
-    //   listRef.current.style.transform = `translateX(${230 + distance}px)`;
-    // }
-    // if (direction === "right" && slideNumber < 5) {
-    //   setSlideNumber(slideNumber + 1);
-    //   listRef.current.style.transform = `translateX(${-230 + distance}px)`;
-    // }
+    setIsMoved(true);
+    let distance = movieRef.current.getBoundingClientRect().x - 20;
+    if (direction === "left" && indexNumber > 0) {
+      setIndexNumber(indexNumber - 1);
+      movieRef.current.style.transform = `translateX(${
+        210 + distance
+      }px)`;
+    }
+    
+    if (direction === "right" && indexNumber < 12 ){
+      setIndexNumber(indexNumber + 1);
+      movieRef.current.style.transform = `translateX(${
+        -210 + distance
+      }px)`;
+      // setIsMoved(true);
+    }
   };
   return (
     <>
@@ -40,13 +46,20 @@ const MovieRow = (props) => {
         <h1>{title}</h1>
 
         <div className="row-wrapper">
-          <MdArrowForwardIos className="movieSlider right-arrow" />
-          <div className="movie-row-block">
+          <MdArrowForwardIos
+            className="movieSlider right-arrow"
+            onClick={() => handleClick("right")}
+          />
+          <div className="movie-row-block" ref={movieRef}>
             {data?.results.map((movie, index) => (
               <SingleMovie key={movie?.id} singleMovie={movie} index={index} />
             ))}
           </div>
-          <MdArrowBackIos className="movieSlider left-arrow" />
+          <MdArrowBackIos
+            className="movieSlider left-arrow"
+            onClick={() => handleClick("left")}
+            style={{ display: !isMoved && "none" }}
+          />
         </div>
       </div>
     </>

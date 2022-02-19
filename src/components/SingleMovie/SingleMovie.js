@@ -16,7 +16,7 @@ const SingleMovie = (props) => {
           alt={singleMovie.title}
         />
       </div>
-      <h5 style={{color:"white", textAlign:"center"}}> {index}</h5>
+      {/* <h5 style={{color:"white", textAlign:"center"}}> {index}</h5> */}
     </div>
   );
 };

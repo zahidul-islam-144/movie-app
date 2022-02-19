@@ -129,3 +129,25 @@ export default api;
   useActionMoviesQuery,
   useComedyMoviesQuery,
   useHistoryMoviesQuery,
+  =============
+    useEffect(() => {
+    fetch(`${baseURI}${data?.results[index]}`,{
+     headers:{
+      "Content-Type": "application/json",
+      "Accept": "application/json",
+      "Access-Control-Allow-Origin": "http://localhost:3001",
+      "Access-Control-Allow-Credentials": true
+     },
+     method: "GET",
+     mode: 'no-cors',
+    })
+    .then((res)=>res.json())
+    .then((info)=> setBanner(info))
+  }, []);
+  ============
+  async function fetchData(){
+            const response = await axios.get(requests.selectedOption);
+            console.log(response);
+            setMovies(response.data.results);
+            return response;
+        }
