@@ -14,24 +14,24 @@
     position: absolute;
     top: 0;
     margin-top: 15%;
-    margin-left: 45px;
+    margin-left: 35px;
     // background-color: yellowgreen;
     h1 {
-      font-size: 6vw;
+      font-size: 5.5vw;
       font-weight: 500;
       color: white;
     }
     .buttons {
-      margin-top: 8%;
+      margin-top: 2%;
       span {
         color: white;
         font-weight: 500;
-        margin-right: 10px;
-        padding: 12px 40px;
+        margin-right: 1rem;
+        // background-color: #42e222;
         background-color: #27191e5d;
-        filter: blur(1);
-        border-radius: 3px;
-       line-height: 10px;
+        border-radius: 0.4vw;
+        line-height: 10px;
+        padding: 0.8% 2.5%;
         &:hover {
           color: black;
           background-color: #e4e8f5;
@@ -40,11 +40,16 @@
       }
     }
     .description{
-      max-width: 45rem;
+      width: 50%;
+      // max-width: 450px;
+      height: auto;
+      padding: 5px;
+   
+      // background-color: yellowgreen;
       p{
         color: white;
         margin-top: 5%;
-        font-size: 1rem;
+        font-size: 1.6vw;
         line-height: 1.3;
       }
     }
