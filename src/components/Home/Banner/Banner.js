@@ -21,9 +21,9 @@ const Banner = () => {
     data?.results[index]?.original_title
   }`;
 const description = `${data?.results[index]?.overview}`;
-  // const truncate = (str, n) => {
-  // 	return str?.length > n ? str.substr(0, n - 1) + "..." : str;
-  // };
+  const truncate = (str, n) => {
+  	return str?.length > n ? str.substr(0, n - 1) + "..." : str;
+  };
   if (isLoading) {
     return (
       <div>
@@ -59,7 +59,7 @@ const description = `${data?.results[index]?.overview}`;
           </div>
 
           <div className="description">
-            <p>{`${description}`}</p>
+            <p>{truncate(`${description}`,150)}</p>
           </div>
         </div>
       </div>
