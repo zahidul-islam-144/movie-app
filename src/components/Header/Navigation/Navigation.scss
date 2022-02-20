@@ -40,9 +40,9 @@
       cursor: pointer;
 
       .profile-logo {
-        height: 90%;
-        width: 100%;
-        // object-fit: contain;
+        max-height: 70%;
+        max-width: 100%;
+        object-fit: contain;
         background: transparent;
       }
       .options {
