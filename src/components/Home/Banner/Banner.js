@@ -62,6 +62,7 @@ const description = `${data?.results[index]?.overview}`;
             <p>{truncate(`${description}`,110)}</p>
           </div>
         </div>
+        <div className="fade-bottom"></div>
       </div>
     </>
   );

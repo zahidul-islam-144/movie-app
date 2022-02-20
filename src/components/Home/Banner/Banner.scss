@@ -2,7 +2,7 @@
   height: 100%;
   width: 100%;
   position: relative;
-  
+
   .banner-img {
     height: 100%;
     width: 100%;
@@ -39,20 +39,34 @@
           color: black;
           background-color: #e4e8f5;
           font-weight: 500;
+          transition: all 0.2s;
         }
       }
     }
-    .description{
+    .description {
       width: 50%;
       height: auto;
       padding: 5px;
 
-      p{
+      p {
         color: white;
         margin-top: 5%;
         font-size: 1.6vw;
         line-height: 1.3;
       }
     }
+  }
+  .fade-bottom {
+    height: 45px;
+    width: 100%;
+    /* margin-bottom: 0px; */
+    bottom: 0;
+    position: absolute;
+    background-image: linear-gradient(
+      180deg,
+      transparent,
+      rgba(29, 28, 28, 0.342),
+      #000000
+    );
   }
 }
