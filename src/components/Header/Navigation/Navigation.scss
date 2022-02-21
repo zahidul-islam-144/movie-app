@@ -1,5 +1,5 @@
 .nav-container {
-  height: 80px;
+  height: 70px;
   width: 100%;
   display: flex;
   display: -webkit-flex;
@@ -20,65 +20,78 @@
   transition-timing-function: ease-in;
   transition: all 0.3s;
   &.nav-black {
-    background: black;
+    background: rgb(0, 0, 0);
   }
 
   .netflix-logo {
-    height: 30px;
+    max-height: 27px;
+    width: auto;
     object-fit: contain;
     left: 20px;
     background: transparent;
   }
 
-  .profile-block {
+  .right-block {
     right: 20px;
 
-    .dropdown {
-      height: 40px;
-      width: auto;
-      // color: rgb(34, 25, 25);
-      cursor: pointer;
-
-      .profile-logo {
-        max-height: 70%;
-        max-width: 100%;
-        object-fit: contain;
-        background: transparent;
+    .right-child-block {
+      display: flex;
+      align-items: center;
+      .search-icon-block {
+        margin-right: 2rem;
+        .search-icon {
+          color: white;
+          height: 2rem;
+          width: 1.5rem;
+          object-fit: contain;
+          cursor: pointer;
+          background: transparent;
+        }
       }
-      .options {
-        display: none;
-        height: 180px;
-        width: 120px;
-        padding: 20px 0px;
-        margin-top: 1px;
-        background-color: rgb(65, 45, 45);
-        border-radius: 6px;
-        transform: translateX(-70px);
-        -webkit-transform: translateX(-70px);
-        -moz-transform: translateX(-70px);
-        -o-transform: translateX(-70px);
-        -ms-transform: translateX(-70px);
-        transition-timing-function: ease-in-out;
-        transition: all 0.8s;
-      }
-      span {
-        padding: 5px 10px;
+      .dropdown {
+        height: 40px;
+        width: auto;
         cursor: pointer;
-        color: white;
-        margin: 0 AUTO;
-        border: 1px solid white;
-      }
-      &:hover {
+
+        .profile-logo {
+          max-height: 70%;
+          width: auto;
+          object-fit: contain;
+          background: transparent;
+        }
         .options {
-          display: flex;
-          display: -webkit-flex;
-          display: -mz-flex;
-          display: -ms-flexbox;
-          display: -o-flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: space-around;
-          position: absolute;
+          display: none;
+          padding: 20px 0px;
+          margin-top: 1px;
+          background-color: rgb(65, 45, 45);
+          border-radius: 6px;
+          transform: translate(-83%, 2%);
+          -webkit-transform: translate(-83%, 2%);
+          -moz-transform: translate(-83%, 2%);
+          -o-transform: translate(-83%, 2%);
+          -ms-transform: translate(-83%, 2%);
+          transition-timing-function: ease-in-out;
+          transition: all 0.8s;
+
+          ul{
+            height: 12rem;
+            width: 15rem;
+            display: flex;
+            align-items: center;
+            // justify-content: center;
+            flex-direction: column;
+            li{
+              list-style: none;
+              color: white;
+            }
+          }
+        }
+
+        &:hover {
+          .options {
+            display: block;
+            position: absolute;
+          }
         }
       }
     }

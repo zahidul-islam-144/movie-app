@@ -28,14 +28,14 @@ const MovieRow = (props) => {
     if (direction === "left" && indexNumber > 0) {
       setIndexNumber(indexNumber - 1);
       movieRef.current.style.transform = `translateX(${
-        210 + distance
+        window.innerWidth + distance
       }px)`;
     }
     
-    if (direction === "right" && indexNumber < 12 ){
+    if (direction === "right" && indexNumber < 3 ){
       setIndexNumber(indexNumber + 1);
       movieRef.current.style.transform = `translateX(${
-        -210 + distance
+        -window.innerWidth + distance
       }px)`;
       // setIsMoved(true);
     }

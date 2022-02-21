@@ -151,3 +151,23 @@ export default api;
             setMovies(response.data.results);
             return response;
         }
+        ========================
+          // slider
+  const handleClick = (direction) => {
+    setIsMoved(true);
+    let distance = movieRef.current.getBoundingClientRect().x - 20;
+    if (direction === "left" && indexNumber > 0) {
+      setIndexNumber(indexNumber - 1);
+      movieRef.current.style.transform = `translateX(${
+        210 + distance
+      }px)`;
+    }
+    
+    if (direction === "right" && indexNumber < 12 ){
+      setIndexNumber(indexNumber + 1);
+      movieRef.current.style.transform = `translateX(${
+        -210 + distance
+      }px)`;
+      // setIsMoved(true);
+    }
+  };
